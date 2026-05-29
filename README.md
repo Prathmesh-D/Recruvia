@@ -147,6 +147,20 @@ Protected against prompt injections, path traversals, and MIME spoofing
 
 ---
 
+### The Scoring Approach
+
+Recruvia uses **Gemini 2.0 Flash** with carefully designed prompts to evaluate candidates objectively. To provide fair and meaningful rankings, our AI engine follows a few core principles:
+
+- **Focus on Technical Skills:** The model specifically looks for concrete technologies, like programming languages, frameworks, databases, and cloud platforms.
+- **Objective Evaluation:** We intentionally filter out subjective adjectives (like "strong" or "excellent") and general soft skills. This keeps the scoring focused on verifiable qualifications rather than resume keyword optimization.
+- **Precise Matching:** A skill is only considered a match if the exact technology name (or a standard variation like *Postgres/PostgreSQL*) appears in the resume.
+- **Realistic Scoring:** We utilize the full 0-100 scale. This means candidates who aren't a great fit will receive naturally lower scores (like 20-40), making it much easier to spot your top applicants.
+- **Consistent Results:** The model is configured to produce predictable and stable responses, ensuring that the evaluation is always reliable and formatted correctly.
+
+<br/>
+
+---
+
 ### Get started in 60 seconds
 
 <table width="100%" cellspacing="0" cellpadding="0">
