@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+/* ─── Recruvia Daktilo Design System ─── */
+@theme inline {
+  /* Primary — Balanced Cherry Cola */
+  --color-primary: #B50002;
+  --color-primary-dark: #8A0002;
+  --color-primary-light: #F8E6E6;
+
+  /* Surface — Creamy Vanilla (Daktilo base) */
+  --color-surface: #EFE6DE;
+  --color-surface-warm: #E3D8CE;
+  --color-surface-white: #F3EFE9;
+
+  /* Semantic */
+  --color-success: #2D6A4F;
+  --color-error: #9A0002;
+
+  --font-sans: var(--font-inter), sans-serif;
+  --font-heading: var(--font-heading-custom), sans-serif;
+  --font-logo: var(--font-logo-custom), sans-serif;
+  --font-mono: ui-monospace, monospace;
+
+  /* Fast, snappy animations instead of bouncy ones */
+  --animate-fade-in: fadeIn 0.15s ease-out;
+  --animate-fade-in-up: fadeInUp 0.2s ease-out;
+  --animate-shimmer: shimmer 1.5s linear infinite;
+  
+  /* Hard shadows for editorial brutalism */
+  --shadow-sm: 2px 2px 0px rgba(26, 20, 18, 1);
+  --shadow-md: 4px 4px 0px rgba(26, 20, 18, 1);
+  --shadow-lg: 8px 8px 0px rgba(26, 20, 18, 1);
+
+  /* Neutrals (High Contrast) */
+  --color-neutral-900: #1A1412;
+  --color-neutral-700: #3D3530;
+  --color-neutral-500: #6B5E57;
+  --color-neutral-300: #C4B8AF;
+  --color-neutral-200: #1A1412; /* Dark borders for Daktilo aesthetic */
+  --color-neutral-100: #EFE6DE;
+  --color-neutral-50: #F8F5F2;
+}
+
+@layer base {
+  * {
+    @apply border-neutral-900; /* Sharp dark borders */
+  }
+  body {
+    @apply bg-surface text-neutral-900;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    @apply tracking-tight font-bold;
+  }
+  
+  /* Custom Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-surface);
+    border-left: 2px solid var(--color-neutral-900);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-neutral-900);
+    border: 2px solid var(--color-surface);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-primary);
+  }
+}
+
+/* ─── Base Styles ─── */
+body {
+  background-color: var(--color-surface);
+  color: var(--color-neutral-900);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* ─── Focus Ring ─── */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ─── Custom Animations ─── */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes progress-fill {
+  from { width: 0%; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-color: var(--color-primary); opacity: 1; }
+  50% { border-color: var(--color-primary-light); opacity: 0.7; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-delayed {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes scan-x {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+
+@keyframes scan-y {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(300%); }
+}
+
+/* ─── Animation Utilities ─── */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-delayed {
+  animation: float-delayed 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+.animate-scan-x {
+  animation: scan-x 2s linear infinite;
+}
+.animate-scan-y {
+  animation: scan-y 3s linear infinite;
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.2s ease-out forwards;
+}
+.animate-fade-in {
+  animation: fade-in 0.15s ease-out forwards;
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.2s ease-out forwards;
+}
+.animate-slide-in-left {
+  animation: slide-in-left 0.2s ease-out forwards;
+}
+.animate-scale-in {
+  animation: scale-in 0.2s ease-out forwards;
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, var(--color-surface-warm) 25%, var(--color-surface-white) 50%, var(--color-surface-warm) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+.animate-pulse-border {
+  animation: pulse-border 1.5s ease-in-out infinite;
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ─── Dot Grid Background Pattern ─── */
+.bg-dot-grid {
+  background-image: radial-gradient(circle, var(--color-neutral-900) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.05;
+}

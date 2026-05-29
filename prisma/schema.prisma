@@ -1,0 +1,78 @@
+// Recruvia — Database Schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum SessionStatus {
+  PENDING
+  PROCESSING
+  COMPLETE
+  ERROR
+}
+
+enum CandidateStatus {
+  PENDING
+  PROCESSING
+  SCORED
+  ERROR
+}
+
+model Session {
+  id        String        @id @default(uuid())
+  status    SessionStatus @default(PENDING)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  jd         JobDescription?
+  candidates CandidateResult[]
+}
+
+model JobDescription {
+  id              String   @id @default(uuid())
+  sessionId       String   @unique
+  session         Session  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  rawText         String
+  title           String
+  requiredSkills  String[]
+  preferredSkills String[]
+  experienceYears Int?
+  educationLevel  String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model CandidateResult {
+  id               String          @id @default(uuid())
+  sessionId        String
+  session          Session         @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  name             String?
+  email            String?
+  phone            String?
+  fileKey          String
+  originalName     String
+  fileSizeBytes    Int
+  mimeType         String
+  rawResumeText    String?
+  totalScore       Float?
+  skillScore       Float?
+  experienceScore  Float?
+  educationScore   Float?
+  keywordScore     Float?
+  rank             Int?
+  matchedSkills    String[]
+  missingSkills    String[]
+  scoringRationale String?
+  status           CandidateStatus @default(PENDING)
+  errorMsg         String?
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+
+  @@index([sessionId])
+  @@index([sessionId, totalScore(sort: Desc)])
+}
