@@ -15,7 +15,7 @@
 ---
 
 <div align="center">
-  <a href="#">
+  <a href="https://recruvia.vercel.app/">
     <img src="https://img.shields.io/badge/web-live-B50002?style=for-the-badge&labelColor=EFE6DE"/>
   </a>
     <img src="https://img.shields.io/badge/version-v1.0.0-B50002?style=for-the-badge&labelColor=EFE6DE"/>
@@ -97,7 +97,7 @@ Protected against prompt injections, path traversals, and MIME spoofing
 
 <div align="center">
 
-[![Try it live](https://img.shields.io/badge/Try%20it%20live-%E2%86%92-B50002?style=for-the-badge&labelColor=EFE6DE)](#)&nbsp;&nbsp;[![Clone Repository](https://img.shields.io/badge/Clone%20Repository-%E2%86%92-B50002?style=for-the-badge&labelColor=EFE6DE)](https://github.com/Prathmesh-D/Recruvia.git)&nbsp;&nbsp;[![Report a bug](https://img.shields.io/badge/Report%20a%20bug-%E2%86%92-B50002?style=for-the-badge&labelColor=EFE6DE)](https://github.com/Prathmesh-D/Recruvia/issues)
+[![Try it live](https://img.shields.io/badge/Try%20it%20live-%E2%86%92-B50002?style=for-the-badge&labelColor=EFE6DE)](https://recruvia.vercel.app/)&nbsp;&nbsp;[![Clone Repository](https://img.shields.io/badge/Clone%20Repository-%E2%86%92-B50002?style=for-the-badge&labelColor=EFE6DE)](https://github.com/Prathmesh-D/Recruvia.git)&nbsp;&nbsp;[![Report a bug](https://img.shields.io/badge/Report%20a%20bug-%E2%86%92-B50002?style=for-the-badge&labelColor=EFE6DE)](https://github.com/Prathmesh-D/Recruvia/issues)
 
 </div>
 
