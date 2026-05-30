@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import { Loader2 } from "lucide-react";
 import { ScoreBadge } from "@/components/ScoreBadge";
+import { Button } from "@/components/ui/Button";
 
 export default function AnalysisProgressPage({
   params,
@@ -29,6 +30,7 @@ export default function AnalysisProgressPage({
   } = useAppStore();
 
   const [isComplete, setIsComplete] = useState(false);
+  const [isCanceling, setIsCanceling] = useState(false);
   const [candidates, setCandidates] = useState<{ id: string; name: string }[]>([]);
 
   useEffect(() => {
@@ -232,9 +234,32 @@ export default function AnalysisProgressPage({
                 </div>
               </div>
               <p className="mt-4 font-mono text-[11px] text-neutral-900 font-bold uppercase tracking-widest text-center">
-                {totalProcessed} of {analysisTotal || "?"} Profiles Scored
-                {!isComplete && remaining > 0 && ` • ~${estimatedSeconds}s remaining`}
+                {isCanceling ? (
+                  <span className="text-[#B50002] animate-pulse">Aborting process...</span>
+                ) : (
+                  <>
+                    {totalProcessed} of {analysisTotal || "?"} Profiles Scored
+                    {!isComplete && remaining > 0 && ` • ~${estimatedSeconds}s remaining`}
+                  </>
+                )}
               </p>
+              
+              {!isComplete && !isCanceling && (
+                <Button 
+                  variant="inverse" 
+                  size="sm"
+                  className="mt-8 px-6 bg-[#B50002] hover:bg-[#B50002]/90 border-neutral-900 shadow-[4px_4px_0px_#1A1412] text-white"
+                  onClick={() => {
+                    setIsCanceling(true);
+                    toast.error("Analysis aborted by user.");
+                    setTimeout(() => {
+                      router.push(`/new/step2?session=${sessionId}`);
+                    }, 1200);
+                  }}
+                >
+                  Cancel Analysis
+                </Button>
+              )}
             </motion.div>
           </div>
         </div>

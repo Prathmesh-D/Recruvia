@@ -90,7 +90,7 @@ function JDContent() {
   const handleAnalyze = async () => {
     const newError: { title?: string; text?: string } = {};
     if (!jdTitle.trim()) newError.title = "Job Title is required.";
-    if (jdText.length < 100) newError.text = "Add at least 100 characters.";
+    if (jdText.length < 10) newError.text = "Add at least 10 characters.";
 
     if (Object.keys(newError).length > 0) {
       setError(newError);
@@ -247,6 +247,27 @@ function JDContent() {
                       charCount={jdText.length}
                       maxChars={10000}
                     />
+                    
+                    <AnimatePresence>
+                      {jdText.length > 0 && jdText.length < 100 && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -5, height: 0 }}
+                          animate={{ opacity: 1, y: 0, height: "auto" }}
+                          exit={{ opacity: 0, y: -5, height: 0 }}
+                          className="mt-3 overflow-hidden"
+                        >
+                          <div className="bg-[#FEF9C3] border-2 border-neutral-900 rounded-lg p-3 shadow-[2px_2px_0px_#1A1412] flex gap-2 items-start">
+                            <span className="text-xl leading-none mt-0.5">💡</span>
+                            <div>
+                              <p className="text-[12px] font-bold text-neutral-900 uppercase tracking-wider mb-0.5">Tip: Short Job Description</p>
+                              <p className="text-xs text-neutral-700 font-medium leading-relaxed">
+                                You can proceed, but for the most accurate AI scoring, consider pasting a fully detailed Job Description (at least 100 characters).
+                              </p>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </motion.div>
               ) : (
@@ -312,7 +333,7 @@ function JDContent() {
               size="lg"
               className="px-8 text-base"
               onClick={handleAnalyze}
-              disabled={jdText.length < 100 || !jdTitle.trim()}
+              disabled={jdText.length < 10 || !jdTitle.trim()}
               isLoading={isSubmitting}
             >
               {isSubmitting ? "Starting Analysis..." : "Analyze Candidates →"}

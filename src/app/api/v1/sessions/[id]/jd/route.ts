@@ -13,7 +13,7 @@ export async function POST(
     const body = await request.json();
     
     const BodySchema = z.object({
-      text: z.string().min(100, "JD text must be at least 100 characters."),
+      text: z.string().min(10, "JD text must be at least 10 characters."),
       title: z.string().optional(),
       previewOnly: z.boolean().optional()
     });
