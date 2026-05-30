@@ -529,6 +529,56 @@ export default function DeveloperPage() {
                     </div>
                   </div>
 
+                  {/* Recruvia */}
+                  <div className="bg-surface-white border-2 border-neutral-900 rounded-xl p-6 shadow-[6px_6px_0px_#1A1412] flex flex-col justify-between relative overflow-hidden hover:-translate-y-0.5 transition-all">
+                    <div className="absolute right-0 top-0 bg-[#B50002] text-white border-b-2 border-l-2 border-neutral-900 px-3 py-1 text-[10px] font-mono font-bold tracking-widest uppercase">
+                      Active
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-neutral-900 mb-1 flex items-center gap-2">
+                        Recruvia — AI ATS
+                      </h3>
+                      <p className="text-[10px] text-neutral-400 font-extrabold font-mono tracking-tight mb-4 uppercase">
+                        Next.js 15 · Gemini 2.0 · PostgreSQL · Prisma
+                      </p>
+                      <p className="text-xs text-neutral-600 font-medium mb-4 leading-relaxed">
+                        An intelligent Applicant Tracking System that parses resumes and ranks candidates against Job Descriptions using Google's Gemini Flash model and strict JSON schemas.
+                      </p>
+                      <ul className="text-[11px] text-neutral-500 font-semibold space-y-1.5 mb-6">
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-[#B50002] text-xs mt-0.5">•</span>
+                          <span>Secure document parsing and text extraction (PDF, DOCX).</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-[#B50002] text-xs mt-0.5">•</span>
+                          <span>Real-time dynamic scoring metrics powered by Gemini AI.</span>
+                        </li>
+                        <li className="flex items-start gap-1.5">
+                          <span className="text-[#B50002] text-xs mt-0.5">•</span>
+                          <span>Neobrutalist UI powered by Tailwind CSS v4 and Framer Motion.</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="flex flex-wrap gap-2.5">
+                      <a
+                        href="https://github.com/Prathmesh-D/Recruvia"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 text-white border-2 border-neutral-900 rounded-md font-bold text-[11px] shadow-[2px_2px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_rgba(0,0,0,0.2)] transition-all"
+                      >
+                        View Repository <ExternalLink size={12} />
+                      </a>
+                      <a
+                        href="https://recruvia.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#B50002] text-white border-2 border-neutral-900 rounded-md font-bold text-[11px] shadow-[2px_2px_0px_#1A1412] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_#1A1412] transition-all"
+                      >
+                        Live Link <ExternalLink size={12} />
+                      </a>
+                    </div>
+                  </div>
+
                   {/* Enhanced AES-192 */}
                   <div className="bg-surface-white border-2 border-neutral-900 rounded-xl p-6 shadow-[6px_6px_0px_#1A1412] flex flex-col justify-between relative overflow-hidden hover:-translate-y-0.5 transition-all">
                     <div className="absolute right-0 top-0 bg-[#4285F4] text-white border-b-2 border-l-2 border-neutral-900 px-3 py-1 text-[10px] font-mono font-bold tracking-widest uppercase">
@@ -562,48 +612,6 @@ export default function DeveloperPage() {
                     <div>
                       <a
                         href="https://github.com/Prathmesh-D/AESFXEncrypt-JavaFX-AES-Encryption-Decryption-Tool"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 text-white border-2 border-neutral-900 rounded-md font-bold text-[11px] shadow-[2px_2px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_rgba(0,0,0,0.2)] transition-all"
-                      >
-                        View Repository <ExternalLink size={12} />
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* Auto Login Bot */}
-                  <div className="bg-surface-white border-2 border-neutral-900 rounded-xl p-6 shadow-[6px_6px_0px_#1A1412] flex flex-col justify-between relative overflow-hidden hover:-translate-y-0.5 transition-all">
-                    <div className="absolute right-0 top-0 bg-neutral-500 text-white border-b-2 border-l-2 border-neutral-900 px-3 py-1 text-[10px] font-mono font-bold tracking-widest uppercase">
-                      Complete
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-neutral-900 mb-1 flex items-center gap-2">
-                        Auto-Login Bot
-                      </h3>
-                      <p className="text-[10px] text-neutral-400 font-extrabold font-mono tracking-tight mb-4 uppercase">
-                        Python · Selenium · Automation
-                      </p>
-                      <p className="text-xs text-neutral-600 font-medium mb-4 leading-relaxed">
-                        Stealth web automation bot targeting credential-based portal routing. Written in Python and configured for headless execution environments.
-                      </p>
-                      <ul className="text-[11px] text-neutral-500 font-semibold space-y-1.5 mb-6">
-                        <li className="flex items-start gap-1.5">
-                          <span className="text-neutral-500 text-xs mt-0.5">•</span>
-                          <span>Stealth browser agent spoofing to bypass validation systems.</span>
-                        </li>
-                        <li className="flex items-start gap-1.5">
-                          <span className="text-neutral-500 text-xs mt-0.5">•</span>
-                          <span>Secure credential fetching using environment variables.</span>
-                        </li>
-                        <li className="flex items-start gap-1.5">
-                          <span className="text-neutral-500 text-xs mt-0.5">•</span>
-                          <span>Fully modular class designs for simple scaling.</span>
-                        </li>
-                      </ul>
-                    </div>
-                    <div>
-                      <a
-                        href="https://github.com/Prathmesh-D/AutoLoginBot"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 text-white border-2 border-neutral-900 rounded-md font-bold text-[11px] shadow-[2px_2px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_rgba(0,0,0,0.2)] transition-all"

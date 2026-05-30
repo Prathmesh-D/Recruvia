@@ -25,6 +25,7 @@ export async function POST(
 
     const formData = await request.formData();
     const files = formData.getAll("files") as File[];
+    const fileIds = formData.getAll("fileIds") as string[];
 
     if (!files || files.length === 0) {
       return NextResponse.json(
@@ -35,7 +36,8 @@ export async function POST(
 
     const results = [];
 
-    for (const file of files) {
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
       try {
         const buffer = Buffer.from(await file.arrayBuffer());
         
@@ -47,7 +49,7 @@ export async function POST(
           throw new Error(`Invalid or unsupported file type. Expected PDF or DOCX, got ${fileTypeResult?.ext || 'unknown'}`);
         }
 
-        const fileId = uuidv4();
+        const fileId = fileIds[i] || uuidv4();
         const ext = fileTypeResult.ext; // Safely use the verified extension
 
         // Extract text — this is what drives AI scoring
@@ -62,9 +64,11 @@ export async function POST(
           console.warn(`File storage failed for ${file.name}, continuing with text extraction only:`, storageErr.message);
         }
 
-        // Create DB record
-        const candidate = await prisma.candidateResult.create({
-          data: {
+        // Upsert DB record using idempotency key
+        const candidate = await prisma.candidateResult.upsert({
+          where: { id: fileId },
+          update: {},
+          create: {
             id: fileId,
             sessionId,
             originalName: file.name,

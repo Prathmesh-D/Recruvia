@@ -89,6 +89,7 @@ function UploadContent() {
         // Upload file
         const formData = new FormData();
         formData.append("files", file);
+        formData.append("fileIds", id); // Idempotency key for Vercel retries
 
         try {
           // Simulate progress
