@@ -32,13 +32,7 @@ function UploadContent() {
 
   // Sync session ID from URL or redirect if missing
   useEffect(() => {
-    if (sessionIdQuery) {
-      if (sessionIdQuery !== sessionId) {
-        setSessionId(sessionIdQuery);
-      }
-      setIsInitializing(false);
-    } else if (!sessionId) {
-      // Create session on the fly if user skipped landing page
+    const createNewSession = () => {
       fetch("/api/v1/sessions", { method: "POST" })
         .then((res) => res.json())
         .then((data) => {
@@ -50,6 +44,25 @@ function UploadContent() {
           toast.error("Failed to initialize session.");
           router.push("/");
         });
+    };
+
+    if (sessionIdQuery) {
+      // Verify session actually exists in DB to prevent 404s
+      fetch(`/api/v1/sessions/${sessionIdQuery}`)
+        .then((res) => {
+          if (!res.ok) throw new Error("Invalid session");
+          if (sessionIdQuery !== sessionId) {
+            setSessionId(sessionIdQuery);
+          }
+          setIsInitializing(false);
+        })
+        .catch(() => {
+          toast.error("Session expired. Starting a fresh session.");
+          createNewSession();
+        });
+    } else if (!sessionId) {
+      // Create session on the fly if user skipped landing page
+      createNewSession();
     } else {
       router.replace(`/new?session=${sessionId}`);
       setIsInitializing(false);
