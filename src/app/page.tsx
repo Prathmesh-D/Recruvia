@@ -185,16 +185,28 @@ export default function LandingPage() {
     }
   };
 
-  const handleResumeSession = () => {
+  const handleResumeSession = async () => {
     const id = sessionInput.trim();
     if (!id) {
       toast.warning("Please enter a Session ID.");
       return;
     }
     setGlobalLoading(true, "RESUMING SESSION...");
-    setSessionId(id);
-    router.push(`/session/${id}/results`);
-    setTimeout(() => setGlobalLoading(false), 500);
+    
+    try {
+      const res = await fetch(`/api/v1/sessions/${id}`);
+      if (!res.ok) {
+        toast.error("Session ID not found.");
+        setGlobalLoading(false);
+        return;
+      }
+      setSessionId(id);
+      router.push(`/session/${id}/results`);
+      setTimeout(() => setGlobalLoading(false), 500);
+    } catch (e) {
+      toast.error("Network error. Could not verify session.");
+      setGlobalLoading(false);
+    }
   };
 
   return (
