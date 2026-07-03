@@ -77,8 +77,8 @@ export default function DeveloperPage() {
   ];
 
   const stats = [
-    { label: "B.Tech IT", value: "7.92 CGPA", desc: "MITS Gwalior", color: "border-primary text-primary" },
-    { label: "Diploma CS", value: "8.09 CGPA", desc: "GPC Betul", color: "border-success text-success" },
+    { label: "B.Tech IT", value: "8.04 CGPA", desc: "MITS Gwalior", color: "border-primary text-primary" },
+    { label: "Diploma CS", value: "8.28 CGPA", desc: "GPC Betul", color: "border-success text-success" },
     { label: "Publications", value: "1 Paper", desc: "IJSRD Cryptography", color: "border-neutral-900 text-neutral-900" },
     { label: "Credentials", value: "3 Active", desc: "AWS, Walmart, IIT", color: "border-neutral-900 text-neutral-900" }
   ];
@@ -300,7 +300,7 @@ export default function DeveloperPage() {
                         <h4 className="font-bold text-neutral-900 text-xs leading-tight">B.Tech – Information Technology</h4>
                         <p className="text-[10px] text-neutral-500 font-semibold mt-0.5">MITS, Gwalior</p>
                         <div className="inline-flex items-center gap-1 mt-1.5 px-1.5 py-0.5 bg-primary-light border border-primary/20 rounded text-[9px] font-bold text-primary">
-                          CGPA: 7.92 / 10
+                          CGPA: 8.04 / 10
                         </div>
                       </div>
 
@@ -313,7 +313,7 @@ export default function DeveloperPage() {
                         <h4 className="font-bold text-neutral-900 text-xs leading-tight">Diploma – Computer Science</h4>
                         <p className="text-[10px] text-neutral-500 font-semibold mt-0.5">GPC, Betul</p>
                         <div className="inline-flex items-center gap-1 mt-1.5 px-1.5 py-0.5 bg-success/10 border border-success/20 rounded text-[9px] font-bold text-success">
-                          CGPA: 8.09 / 10
+                          CGPA: 8.28 / 10
                         </div>
                       </div>
 
@@ -325,7 +325,7 @@ export default function DeveloperPage() {
                         </span>
                         <h4 className="font-bold text-neutral-900 text-xs leading-tight">SSC (10th)</h4>
                         <div className="inline-flex items-center gap-1 mt-1.5 px-1.5 py-0.5 bg-neutral-100 border border-neutral-300 rounded text-[9px] font-bold text-neutral-600">
-                          Grade: 8.7 / 10 CGPA
+                          Grade: 8.98 / 10 CGPA
                         </div>
                       </div>
 
@@ -711,8 +711,8 @@ export default function DeveloperPage() {
                     {/* AWS Forage */}
                     <div className="bg-surface-warm/30 border-2 border-neutral-900 p-5 rounded-lg shadow-[3px_3px_0px_#1A1412] flex flex-col justify-between hover:-translate-y-0.5 transition-all">
                       <div>
-                        <div className="w-10 h-10 rounded bg-[#4285F4]/10 border border-[#4285F4]/30 flex items-center justify-center text-xl mb-4 font-bold text-[#4285F4]">
-                          AWS
+                        <div className="w-10 h-10 rounded bg-[#4285F4]/10 border border-[#4285F4]/30 flex items-center justify-center mb-4 p-1">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" className="w-full h-full object-contain" />
                         </div>
                         <h4 className="font-bold text-neutral-900 text-sm leading-tight">Solutions Architecture Virtual Simulation</h4>
                         <p className="text-[10px] text-neutral-500 font-extrabold mt-1">Issued by AWS (Forage)</p>
@@ -726,8 +726,17 @@ export default function DeveloperPage() {
                     {/* Walmart Forage */}
                     <div className="bg-surface-warm/30 border-2 border-neutral-900 p-5 rounded-lg shadow-[3px_3px_0px_#1A1412] flex flex-col justify-between hover:-translate-y-0.5 transition-all">
                       <div>
-                        <div className="w-10 h-10 rounded bg-success/10 border border-success/30 flex items-center justify-center text-xl mb-4 font-bold text-success">
-                          W
+                        <div className="w-10 h-10 rounded bg-success/10 border border-success/30 flex items-center justify-center mb-4 p-1">
+                          <svg viewBox="0 0 100 100" className="w-full h-full object-contain">
+                            <g stroke="#FFC220" strokeWidth="16" strokeLinecap="round">
+                              <line x1="50" y1="15" x2="50" y2="33" />
+                              <line x1="50" y1="85" x2="50" y2="67" />
+                              <line x1="19.7" y1="32.5" x2="35.3" y2="41.5" />
+                              <line x1="80.3" y1="67.5" x2="64.7" y2="58.5" />
+                              <line x1="19.7" y1="67.5" x2="35.3" y2="58.5" />
+                              <line x1="80.3" y1="32.5" x2="64.7" y2="41.5" />
+                            </g>
+                          </svg>
                         </div>
                         <h4 className="font-bold text-neutral-900 text-sm leading-tight">Software Engineering Virtual Simulation</h4>
                         <p className="text-[10px] text-neutral-500 font-extrabold mt-1">Issued by Walmart (Forage)</p>
@@ -741,8 +750,8 @@ export default function DeveloperPage() {
                     {/* IIT Jodhpur */}
                     <div className="bg-surface-warm/30 border-2 border-neutral-900 p-5 rounded-lg shadow-[3px_3px_0px_#1A1412] flex flex-col justify-between hover:-translate-y-0.5 transition-all">
                       <div>
-                        <div className="w-10 h-10 rounded bg-primary/10 border border-primary/30 flex items-center justify-center text-xl mb-4 font-bold text-primary">
-                          IIT
+                        <div className="w-10 h-10 rounded bg-white border border-neutral-300 flex items-center justify-center mb-4 p-0.5">
+                          <img src="/iit.svg" alt="IIT Jodhpur Official Logo" className="w-full h-full object-contain" />
                         </div>
                         <h4 className="font-bold text-neutral-900 text-sm leading-tight">Ethical Hacking Certificate</h4>
                         <p className="text-[10px] text-neutral-500 font-extrabold mt-1">Issued by IIT Jodhpur</p>

@@ -34,7 +34,7 @@ const bangers = Bangers({
 });
 
 export const metadata: Metadata = {
-  title: "Recruvia — Resume Screening Assistant",
+  title: "Recruvia",
   description:
     "Upload resumes, paste your Job Description, and get an organized list of candidates to help you screen applicants efficiently.",
   keywords: [
