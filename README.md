@@ -32,6 +32,23 @@
 
 ---
 
+### Watch the Showcase
+
+<div align="center">
+  <p>Check out the full video demonstration of Kurl.app in action.</p>
+  <a href="https://youtu.be/c_kCZlfsYeU">
+    <img src="https://img.shields.io/badge/YouTube-Watch_Demo_Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch on YouTube" />
+  </a>
+  <br/><br/>
+  <a href="https://youtu.be/c_kCZlfsYeU">
+    <img src="https://img.youtube.com/vi/c_kCZlfsYeU/maxresdefault.jpg" alt="Watch the Demo on YouTube" width="80%" style="border-radius: 16px; border: 2px solid #1A1412; box-shadow: 4px 4px 0px #1A1412;" />
+  </a>
+</div>
+
+<br/>
+
+---
+
 ### Dashboard Preview
 
 <div align="center">
